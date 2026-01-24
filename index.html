@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>周毅荣 / Yirong Zhou - Academic Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+/* === 样式保持原模板，不赘述 === */
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="switchLang('ja')">日本語</button>
+    <button class="lang-btn" onclick="switchLang('en')">English</button>
+    <button class="lang-btn" onclick="switchLang('zh')">中文</button>
+  </div>
+
+  <h1 data-lang="ja">周 毅荣</h1>
+  <h1 data-lang="en">Yirong Zhou</h1>
+  <h1 data-lang="zh">周毅荣</h1>
+
+  <div class="name-en" data-lang="ja">Zhou Yirong</div>
+  <div class="name-en" data-lang="en">周 毅荣（Zhou Yirong）</div>
+  <div class="name-en" data-lang="zh">Yirong Zhou</div>
+
+  <div class="affiliation" data-lang="ja">
+    中央民族大学 数学与信息科学学院<br>
+    信息与计算科学 本科生（2026年6月卒業予定）
+  </div>
+  <div class="affiliation" data-lang="en">
+    School of Mathematics and Information Science<br>
+    Minzu University of China<br>
+    B.S. Student in Information and Computing Science (Expected June 2026)
+  </div>
+  <div class="affiliation" data-lang="zh">
+    中央民族大学 数学与信息科学学院<br>
+    信息与计算科学 本科生（预计2026年6月毕业）
+  </div>
+</header>
+
+<nav>
+<ul>
+  <li><a href="#about" data-lang="ja">自己紹介</a></li>
+  <li><a href="#about" data-lang="en">About</a></li>
+  <li><a href="#about" data-lang="zh">个人简介</a></li>
+
+  <li><a href="#research" data-lang="ja">研究関心</a></li>
+  <li><a href="#research" data-lang="en">Research Interests</a></li>
+  <li><a href="#research" data-lang="zh">研究兴趣</a></li>
+
+  <li><a href="#projects" data-lang="ja">研究・プロジェクト</a></li>
+  <li><a href="#projects" data-lang="en">Projects</a></li>
+  <li><a href="#projects" data-lang="zh">项目</a></li>
+</ul>
+</nav>
+
+<main>
+
+<section id="about">
+<h2 data-lang="ja">自己紹介</h2>
+<h2 data-lang="en">About Me</h2>
+<h2 data-lang="zh">个人简介</h2>
+
+<p data-lang="ja">
+情報と計算科学を専攻する学部生です。数値計算、線形代数、最適化理論といった数理的基礎を背景に、
+リアルタイム性を要求される視覚計算システムに強い関心を持っています。
+</p>
+
+<p data-lang="en">
+I am an undergraduate student majoring in Information and Computing Science, with a strong mathematical foundation
+in numerical methods, linear algebra, and optimization. My interests focus on real-time visual computing systems
+and performance-critical pipelines.
+</p>
+
+<p data-lang="zh">
+我是信息与计算科学专业本科生，具有扎实的数值计算、线性代数与优化方法背景，
+研究兴趣集中在实时视觉计算系统与高性能计算管线。
+</p>
+</section>
+
+<section id="research">
+<h2 data-lang="ja">研究関心</h2>
+<h2 data-lang="en">Research Interests</h2>
+<h2 data-lang="zh">研究兴趣</h2>
+
+<ul data-lang="ja">
+  <li>リアルタイムレンダリングと視覚計算システム</li>
+  <li>GPU 加速による性能最適化</li>
+  <li>学習ベース手法と従来パイプラインの統合</li>
+</ul>
+
+<ul data-lang="en">
+  <li>Real-time rendering and visual computing systems</li>
+  <li>GPU-accelerated performance optimization</li>
+  <li>Integration of learning-based methods into classical pipelines</li>
+</ul>
+
+<ul data-lang="zh">
+  <li>实时渲染与视觉计算系统</li>
+  <li>GPU 加速与性能优化</li>
+  <li>学习方法与传统计算管线的融合</li>
+</ul>
+</section>
+
+<section id="projects">
+<h2 data-lang="ja">研究・プロジェクト</h2>
+<h2 data-lang="en">Projects</h2>
+<h2 data-lang="zh">项目</h2>
+
+<div class="project-item">
+<div class="project-title">Enhanced YOLOv8-based Vehicle Detection (IEEE)</div>
+<div class="project-period">2024 – 2025</div>
+<div class="project-desc">
+First-author research on a real-time vehicle detection system. Designed custom attention modules
+to improve feature representation under latency constraints.
+</div>
+</div>
+
+<div class="project-item">
+<div class="project-title">Software Rasterizer (Ongoing)</div>
+<div class="project-period">2025 – Present</div>
+<div class="project-desc">
+Design and implementation of a CPU-based rasterization pipeline to study rendering algorithms,
+data layout, and system-level optimization.
+</div>
+</div>
+
+</section>
+
+</main>
+
+<footer>
+© 2026 Yirong Zhou
+</footer>
+
+</div>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(e => e.style.display = 'none');
+  document.querySelectorAll(`[data-lang="${lang}"]`).forEach(e => e.style.display = '');
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  localStorage.setItem('preferredLang', lang);
+}
+window.onload = () => {
+  switchLang(localStorage.getItem('preferredLang') || 'en');
+};
+</script>
+
+</body>
+</html>
