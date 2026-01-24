@@ -68,13 +68,13 @@
         }
 
         .profile-photo {
-            width: 140px; 
-            height: auto;
-            border: 1px solid #333;
-            padding: 0; 
-            display: block;
-            background-color: #fff;
-        }
+    width: 140px;
+    height: auto;
+    border: 1px solid #666;
+    display: block;
+    background-color: #fff;
+    filter: contrast(1.05); 
+}
 
         /* 移动端适配：照片居中 */
         @media (max-width: 600px) {
@@ -88,10 +88,15 @@
             }
         }
 
-        .profile-text p {
-            font-size: 15px;
-            margin-bottom: 14px;
-        }
+        .profile-text p, section p {
+    text-align: justify; 
+    text-justify: inter-character;
+    word-break: break-all;
+}
+
+nav a:visited {
+    color: #551a8b; 
+}
 
         .item {
             margin-bottom: 22px;
