@@ -62,13 +62,30 @@
 
         .profile-container {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             align-items: flex-start;
+            margin-bottom: 30px;
         }
 
         .profile-photo {
-            width: 150px;
-            border: 1px solid #ccc;
+            width: 140px; 
+            height: auto;
+            border: 1px solid #333;
+            padding: 0; 
+            display: block;
+            background-color: #fff;
+        }
+
+        /* 移动端适配：照片居中 */
+        @media (max-width: 600px) {
+            .profile-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            .profile-photo {
+                width: 160px;
+            }
         }
 
         .profile-text p {
