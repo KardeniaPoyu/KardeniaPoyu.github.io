@@ -3,598 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>山田太郎 - 個人ページ</title>
+    <title>周 毅荣 (Yirong Zhou)</title>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Yu Gothic", "游ゴシック", "Meiryo", sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background-color: #f8f8f8;
-        }
-        
-        .container {
-            max-width: 960px;
+            font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+            line-height: 1.9;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            max-width: 820px;
             margin: 0 auto;
-            background-color: #fff;
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            padding: 40px 24px;
         }
-        
+
         header {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 40px 50px;
-            border-bottom: 4px solid #3498db;
-            position: relative;
+            border-bottom: 1px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
-        
-        .lang-switcher {
-            position: absolute;
-            top: 20px;
-            right: 50px;
-            display: flex;
-            gap: 10px;
-        }
-        
-        .lang-btn {
-            background-color: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: #fff;
-            padding: 6px 12px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 13px;
-            transition: all 0.3s;
-        }
-        
-        .lang-btn:hover {
-            background-color: rgba(255,255,255,0.2);
-        }
-        
-        .lang-btn.active {
-            background-color: #3498db;
-            border-color: #3498db;
-        }
-        
+
         h1 {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 8px;
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 6px;
         }
-        
-        .name-en {
-            font-size: 16px;
-            color: #bdc3c7;
-            margin-bottom: 15px;
-        }
-        
+
         .affiliation {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #ecf0f1;
+            font-size: 15px;
+            margin-top: 10px;
         }
-        
+
         nav {
-            background-color: #34495e;
-            padding: 0 50px;
+            margin-bottom: 40px;
         }
-        
+
         nav ul {
             list-style: none;
+            padding: 0;
             display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
         }
-        
-        nav li {
-            margin-right: 30px;
-        }
-        
+
         nav a {
-            display: block;
-            padding: 15px 0;
-            color: #fff;
-            text-decoration: none;
+            color: #0000ee;
+            text-decoration: underline;
             font-size: 14px;
-            transition: color 0.3s;
         }
-        
-        nav a:hover {
-            color: #3498db;
-        }
-        
-        main {
-            padding: 40px 50px 60px;
-        }
-        
-        section {
-            margin-bottom: 50px;
-        }
-        
+
         h2 {
-            font-size: 20px;
-            font-weight: 500;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #3498db;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #f2f2f2;
+            padding: 6px 12px;
+            margin: 42px 0 20px 0;
+            border-left: 5px solid #333;
         }
-        
-        .profile-section {
+
+        .profile-container {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             align-items: flex-start;
         }
-        
-        .profile-image {
-            flex-shrink: 0;
+
+        .profile-photo {
+            width: 150px;
+            border: 1px solid #ccc;
         }
-        
-        .profile-image img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border: 1px solid #ddd;
+
+        .profile-text p {
+            font-size: 15px;
+            margin-bottom: 14px;
         }
-        
-        .profile-content {
-            flex: 1;
+
+        .item {
+            margin-bottom: 22px;
+            font-size: 15px;
         }
-        
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
+
+        .item-title {
+            font-weight: bold;
         }
-        
-        .info-table th,
-        .info-table td {
-            padding: 12px 0;
-            text-align: left;
-            border-bottom: 1px solid #ecf0f1;
-            font-size: 14px;
-        }
-        
-        .info-table th {
-            width: 120px;
-            font-weight: 500;
+
+        .item-meta {
+            font-size: 13px;
             color: #555;
         }
-        
-        .project-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-left: 4px solid #3498db;
+
+        footer {
+            margin-top: 90px;
+            font-size: 12px;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+            color: #777;
         }
-        
-        .project-title {
-            font-weight: 500;
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: #2c3e50;
-        }
-        
-        .project-period {
-            font-size: 13px;
-            color: #7f8c8d;
+
+        .lang-nav {
+            text-align: right;
+            font-size: 12px;
             margin-bottom: 10px;
         }
-        
-        .project-desc {
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .skill-tag {
-            background-color: #ecf0f1;
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-size: 13px;
-            color: #555;
-        }
-        
-        .publication-item {
-            margin-bottom: 20px;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .publication-item:before {
-            content: "▪";
-            position: absolute;
-            left: 0;
-            color: #3498db;
-        }
-        
-        .pub-title {
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-        
-        .pub-details {
-            font-size: 14px;
+
+        .lang-nav a {
+            margin-left: 10px;
+            cursor: pointer;
             color: #666;
+            text-decoration: none;
         }
-        
-        footer {
-            background-color: #2c3e50;
-            color: #95a5a6;
-            text-align: center;
-            padding: 20px;
-            font-size: 12px;
+
+        .lang-nav a.active {
+            font-weight: bold;
+            color: #000;
+            text-decoration: underline;
         }
-        
-        [data-lang]:not([data-lang="ja"]) {
-            display: none;
-        }
-        
-        @media (max-width: 768px) {
-            header, nav, main {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-            
-            .lang-switcher {
-                right: 20px;
-                top: 15px;
-            }
-            
-            .profile-section {
-                flex-direction: column;
-            }
-            
-            .profile-image img {
-                width: 150px;
-                height: 150px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-            }
-            
-            nav li {
-                margin-right: 20px;
-            }
-        }
+
+        [data-lang] { display: none; }
+        [data-lang="ja"] { display: block; }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <div class="lang-switcher">
-                <button class="lang-btn active" onclick="switchLang('ja')">日本語</button>
-                <button class="lang-btn" onclick="switchLang('en')">English</button>
-                <button class="lang-btn" onclick="switchLang('zh')">中文</button>
-            </div>
-            
-            <h1 data-lang="ja">山田太郎</h1>
-            <h1 data-lang="en">YAMADA Taro</h1>
-            <h1 data-lang="zh">山田太郎</h1>
-            
-            <div class="name-en" data-lang="ja">YAMADA Taro</div>
-            <div class="name-en" data-lang="en">やまだ たろう</div>
-            <div class="name-en" data-lang="zh">YAMADA Taro</div>
-            
-            <div class="affiliation" data-lang="ja">
-                東京大学 工学部 情報工学科<br>
-                4年生（2026年3月卒業予定）
-            </div>
-            <div class="affiliation" data-lang="en">
-                Department of Information Engineering, Faculty of Engineering<br>
-                The University of Tokyo, 4th Year (Expected Graduation: March 2026)
-            </div>
-            <div class="affiliation" data-lang="zh">
-                东京大学 工学部 信息工程学科<br>
-                四年级（预计2026年3月毕业）
-            </div>
-        </header>
-        
-        <nav>
-            <ul>
-                <li><a href="#about" data-lang="ja">自己紹介</a></li>
-                <li><a href="#about" data-lang="en">About</a></li>
-                <li><a href="#about" data-lang="zh">个人简介</a></li>
-                
-                <li><a href="#research" data-lang="ja">研究興味</a></li>
-                <li><a href="#research" data-lang="en">Research Interests</a></li>
-                <li><a href="#research" data-lang="zh">研究兴趣</a></li>
-                
-                <li><a href="#projects" data-lang="ja">プロジェクト</a></li>
-                <li><a href="#projects" data-lang="en">Projects</a></li>
-                <li><a href="#projects" data-lang="zh">项目经历</a></li>
-                
-                <li><a href="#skills" data-lang="ja">スキル</a></li>
-                <li><a href="#skills" data-lang="en">Skills</a></li>
-                <li><a href="#skills" data-lang="zh">技能</a></li>
-            </ul>
-        </nav>
-        
-        <main>
-            <section id="about">
-                <h2 data-lang="ja">自己紹介</h2>
-                <h2 data-lang="en">About Me</h2>
-                <h2 data-lang="zh">个人简介</h2>
-                
-                <div class="profile-section">
-                    <div class="profile-image">
-                        <img src="https://via.placeholder.com/180" alt="Profile Photo">
-                    </div>
-                    <div class="profile-content">
-                        <p style="margin-bottom: 20px;" data-lang="ja">
-                            東京大学工学部情報工学科4年生です。機械学習とコンピュータビジョンに興味を持ち、現在は深層学習を用いた画像認識に関する卒業研究に取り組んでいます。
-                        </p>
-                        <p style="margin-bottom: 20px;" data-lang="en">
-                            I am a 4th-year undergraduate student in the Department of Information Engineering at the University of Tokyo. I am interested in machine learning and computer vision, and currently working on my graduation thesis focusing on image recognition using deep learning.
-                        </p>
-                        <p style="margin-bottom: 20px;" data-lang="zh">
-                            我是东京大学工学部信息工程学科的四年级本科生。我对机器学习和计算机视觉感兴趣，目前正在进行关于深度学习图像识别的毕业研究。
-                        </p>
-                        
-                        <table class="info-table">
-                            <tr>
-                                <th data-lang="ja">所属</th>
-                                <th data-lang="en">Affiliation</th>
-                                <th data-lang="zh">所属</th>
-                                <td data-lang="ja">東京大学 工学部 情報工学科</td>
-                                <td data-lang="en">Dept. of Info. Eng., Faculty of Eng., Univ. of Tokyo</td>
-                                <td data-lang="zh">东京大学 工学部 信息工程学科</td>
-                            </tr>
-                            <tr>
-                                <th data-lang="ja">学年</th>
-                                <th data-lang="en">Year</th>
-                                <th data-lang="zh">年级</th>
-                                <td data-lang="ja">4年生（2026年3月卒業予定）</td>
-                                <td data-lang="en">4th Year (Expected Graduation: March 2026)</td>
-                                <td data-lang="zh">四年级（预计2026年3月毕业）</td>
-                            </tr>
-                            <tr>
-                                <th data-lang="ja">研究室</th>
-                                <th data-lang="en">Laboratory</th>
-                                <th data-lang="zh">研究室</th>
-                                <td data-lang="ja">〇〇研究室（2025年4月配属）</td>
-                                <td data-lang="en">〇〇 Laboratory (Joined in April 2025)</td>
-                                <td data-lang="zh">〇〇研究室（2025年4月加入）</td>
-                            </tr>
-                            <tr>
-                                <th data-lang="ja">興味分野</th>
-                                <th data-lang="en">Interests</th>
-                                <th data-lang="zh">研究方向</th>
-                                <td data-lang="ja">機械学習、コンピュータビジョン、深層学習</td>
-                                <td data-lang="en">Machine Learning, Computer Vision, Deep Learning</td>
-                                <td data-lang="zh">机器学习、计算机视觉、深度学习</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="research">
-                <h2 data-lang="ja">研究興味</h2>
-                <h2 data-lang="en">Research Interests</h2>
-                <h2 data-lang="zh">研究兴趣</h2>
-                
-                <p data-lang="ja">
-                    深層学習を用いた画像認識技術に強い関心を持っています。特に、限られたデータから効率的に学習する手法や、実世界への応用可能性の高い技術に興味があります。大学院では、これらの分野でより深く研究を進めていきたいと考えています。
-                </p>
-                <p data-lang="en">
-                    I have a strong interest in image recognition technology using deep learning. In particular, I am interested in methods for efficient learning from limited data and technologies with high applicability to real-world scenarios. I aim to deepen my research in these areas during my graduate studies.
-                </p>
-                <p data-lang="zh">
-                    我对使用深度学习的图像识别技术有浓厚的兴趣。特别是对从有限数据中高效学习的方法，以及具有高实用性的技术感兴趣。我希望在研究生阶段能在这些领域进行更深入的研究。
-                </p>
-                
-                <p style="margin-top: 15px;" data-lang="ja">具体的な研究テーマ:</p>
-                <p style="margin-top: 15px;" data-lang="en">Specific Research Topics:</p>
-                <p style="margin-top: 15px;" data-lang="zh">具体研究主题：</p>
-                
-                <ul style="margin-left: 20px; margin-top: 10px;" data-lang="ja">
-                    <li>少量データを用いた画像分類手法</li>
-                    <li>転移学習とドメイン適応</li>
-                    <li>医用画像解析への応用</li>
-                    <li>説明可能なAI技術</li>
-                </ul>
-                <ul style="margin-left: 20px; margin-top: 10px;" data-lang="en">
-                    <li>Image classification methods using limited data</li>
-                    <li>Transfer learning and domain adaptation</li>
-                    <li>Applications to medical image analysis</li>
-                    <li>Explainable AI techniques</li>
-                </ul>
-                <ul style="margin-left: 20px; margin-top: 10px;" data-lang="zh">
-                    <li>使用少量数据的图像分类方法</li>
-                    <li>迁移学习与领域自适应</li>
-                    <li>医学图像分析应用</li>
-                    <li>可解释AI技术</li>
-                </ul>
-            </section>
-            
-            <section id="projects">
-                <h2 data-lang="ja">プロジェクト・研究活動</h2>
-                <h2 data-lang="en">Projects & Research Activities</h2>
-                <h2 data-lang="zh">项目与研究活动</h2>
-                
-                <div class="project-item">
-                    <div class="project-title" data-lang="ja">卒業研究：深層学習による医用画像セグメンテーション</div>
-                    <div class="project-title" data-lang="en">Graduation Thesis: Medical Image Segmentation Using Deep Learning</div>
-                    <div class="project-title" data-lang="zh">毕业研究：基于深度学习的医学图像分割</div>
-                    
-                    <div class="project-period" data-lang="ja">2025年4月 - 現在</div>
-                    <div class="project-period" data-lang="en">April 2025 - Present</div>
-                    <div class="project-period" data-lang="zh">2025年4月 - 至今</div>
-                    
-                    <div class="project-desc" data-lang="ja">
-                        U-Netをベースとした深層学習モデルを用いて、CT画像から臓器領域を自動抽出する手法を研究しています。限られたアノテーションデータで高精度な抽出を実現するため、データ拡張や転移学習の技術を活用しています。
-                    </div>
-                    <div class="project-desc" data-lang="en">
-                        Researching methods for automatic organ region extraction from CT images using U-Net-based deep learning models. Utilizing data augmentation and transfer learning techniques to achieve high-precision extraction with limited annotation data.
-                    </div>
-                    <div class="project-desc" data-lang="zh">
-                        研究使用基于U-Net的深度学习模型从CT图像中自动提取器官区域的方法。利用数据增强和迁移学习技术，在有限的标注数据下实现高精度提取。
-                    </div>
-                </div>
-                
-                <div class="project-item">
-                    <div class="project-title" data-lang="ja">画像認識アプリケーションの開発</div>
-                    <div class="project-title" data-lang="en">Development of Image Recognition Application</div>
-                    <div class="project-title" data-lang="zh">图像识别应用开发</div>
-                    
-                    <div class="project-period" data-lang="ja">2024年9月 - 2024年12月</div>
-                    <div class="project-period" data-lang="en">September 2024 - December 2024</div>
-                    <div class="project-period" data-lang="zh">2024年9月 - 2024年12月</div>
-                    
-                    <div class="project-desc" data-lang="ja">
-                        授業プロジェクトとして、PyTorchを用いた画像分類システムを開発しました。CNNモデルの実装からWebアプリケーションへの組み込みまでを担当し、実用的なシステム構築の経験を積みました。
-                    </div>
-                    <div class="project-desc" data-lang="en">
-                        Developed an image classification system using PyTorch as a course project. Gained experience in practical system development, from CNN model implementation to integration into web applications.
-                    </div>
-                    <div class="project-desc" data-lang="zh">
-                        作为课程项目，使用PyTorch开发了图像分类系统。从CNN模型实现到集成到Web应用，积累了实用系统开发经验。
-                    </div>
-                </div>
-                
-                <div class="project-item">
-                    <div class="project-title" data-lang="ja">機械学習勉強会の運営</div>
-                    <div class="project-title" data-lang="en">Organization of Machine Learning Study Group</div>
-                    <div class="project-title" data-lang="zh">机器学习学习小组组织</div>
-                    
-                    <div class="project-period" data-lang="ja">2024年4月 - 現在</div>
-                    <div class="project-period" data-lang="en">April 2024 - Present</div>
-                    <div class="project-period" data-lang="zh">2024年4月 - 至今</div>
-                    
-                    <div class="project-desc" data-lang="ja">
-                        学部生向けの機械学習勉強会を主催し、週1回のペースで論文読会や実装演習を行っています。最新の研究動向を追いながら、実装力の向上を目指しています。
-                    </div>
-                    <div class="project-desc" data-lang="en">
-                        Organizing a machine learning study group for undergraduate students, conducting weekly paper reading sessions and implementation exercises. Aiming to improve implementation skills while keeping up with the latest research trends.
-                    </div>
-                    <div class="project-desc" data-lang="zh">
-                        组织面向本科生的机器学习学习小组，每周进行论文研读和实践练习。在追踪最新研究动态的同时，提升实践能力。
-                    </div>
-                </div>
-            </section>
-            
-            <section id="skills">
-                <h2 data-lang="ja">スキル</h2>
-                <h2 data-lang="en">Skills</h2>
-                <h2 data-lang="zh">技能</h2>
-                
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="ja">プログラミング言語</h3>
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="en">Programming Languages</h3>
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="zh">编程语言</h3>
-                <div class="skills-list">
-                    <span class="skill-tag" data-lang="ja">Python（熟練）</span>
-                    <span class="skill-tag" data-lang="en">Python (Advanced)</span>
-                    <span class="skill-tag" data-lang="zh">Python（熟练）</span>
-                    
-                    <span class="skill-tag" data-lang="ja">C++（中級）</span>
-                    <span class="skill-tag" data-lang="en">C++ (Intermediate)</span>
-                    <span class="skill-tag" data-lang="zh">C++（中级）</span>
-                    
-                    <span class="skill-tag" data-lang="ja">Java（中級）</span>
-                    <span class="skill-tag" data-lang="en">Java (Intermediate)</span>
-                    <span class="skill-tag" data-lang="zh">Java（中级）</span>
-                    
-                    <span class="skill-tag" data-lang="ja">JavaScript（基礎）</span>
-                    <span class="skill-tag" data-lang="en">JavaScript (Basic)</span>
-                    <span class="skill-tag" data-lang="zh">JavaScript（基础）</span>
-                </div>
-                
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="ja">機械学習・深層学習</h3>
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="en">Machine Learning & Deep Learning</h3>
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="zh">机器学习与深度学习</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">PyTorch</span>
-                    <span class="skill-tag">TensorFlow</span>
-                    <span class="skill-tag">scikit-learn</span>
-                    <span class="skill-tag">OpenCV</span>
-                    <span class="skill-tag">NumPy/Pandas</span>
-                </div>
-                
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="ja">その他</h3>
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="en">Others</h3>
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="zh">其他</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Git/GitHub</span>
-                    <span class="skill-tag">Linux</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">LaTeX</span>
-                </div>
-                
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="ja">語学</h3>
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="en">Languages</h3>
-                <h3 style="font-size: 16px; margin: 25px 0 15px; color: #555;" data-lang="zh">语言能力</h3>
-                <div class="publication-item">
-                    <div class="pub-details" data-lang="ja">
-                        <strong>日本語:</strong> ネイティブ<br>
-                        <strong>英語:</strong> TOEIC 850点（2024年6月）/ 学術論文の読解可能
-                    </div>
-                    <div class="pub-details" data-lang="en">
-                        <strong>Japanese:</strong> Native<br>
-                        <strong>English:</strong> TOEIC 850 (June 2024) / Able to read academic papers
-                    </div>
-                    <div class="pub-details" data-lang="zh">
-                        <strong>日语:</strong> 母语<br>
-                        <strong>英语:</strong> TOEIC 850分（2024年6月）/ 可阅读学术论文
-                    </div>
-                </div>
-            </section>
-        </main>
-        
-        <footer>
-            &copy; 2026 Taro Yamada. All rights reserved.
-        </footer>
+
+<div class="lang-nav">
+    <a id="btn-ja" class="active" onclick="switchLang('ja')">日本語</a>
+    <a id="btn-en" onclick="switchLang('en')">English</a>
+</div>
+
+<header>
+    <h1 data-lang="ja">周 毅荣</h1>
+    <h1 data-lang="en">Yirong Zhou</h1>
+
+    <div class="affiliation" data-lang="ja">
+        中央民族大学 理学院 学部4年<br>
+        情報と計算科学専攻（2026年6月卒業予定）<br>
+        Email: yirong.zhou@muc.edu.cn
     </div>
 
-    <script>
-        function switchLang(lang) {
-            // 隐藏所有语言内容
-            const allElements = document.querySelectorAll('[data-lang]');
-            allElements.forEach(el => {
-                el.style.display = 'none';
-            });
-            
-            // 显示选中语言的内容
-            const selectedElements = document.querySelectorAll(`[data-lang="${lang}"]`);
-            selectedElements.forEach(el => {
-                el.style.display = '';
-            });
-            
-            // 更新按钮状态
-            const buttons = document.querySelectorAll('.lang-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // 保存语言选择到localStorage
-            localStorage.setItem('preferredLang', lang);
-        }
-        
-        // 页面加载时恢复上次选择的语言
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLang') || 'ja';
-            const buttons = document.querySelectorAll('.lang-btn');
-            
-            buttons.forEach(btn => {
-                if (btn.textContent.includes('日本語') && savedLang === 'ja') {
-                    btn.click();
-                } else if (btn.textContent.includes('English') && savedLang === 'en') {
-                    btn.click();
-                } else if (btn.textContent.includes('中文') && savedLang === 'zh') {
-                    btn.click();
-                }
-            });
-        });
-    </script>
+    <div class="affiliation" data-lang="en">
+        Senior Undergraduate Student<br>
+        School of Mathematics and Information Science, Minzu University of China<br>
+        Email: zhouyr [at] example.com
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="https://github.com/KardeniaPoyu" target="_blank">GitHub</a></li>
+        <li><a href="#">CV (PDF)</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<section id="about">
+    <h2 data-lang="ja">自己紹介</h2>
+    <h2 data-lang="en">About Me</h2>
+
+    <div class="profile-container">
+        <img src="/images/69a569a138222da238bb3041119c94d1.jpg" class="profile-photo" alt="Photo">
+
+        <div class="profile-text">
+            <p data-lang="ja">
+                中央民族大学にて情報と計算科学を専攻している学部生です。
+                数値計算、線形代数、最適化理論を基盤として、
+                数学的手法が実際の情報システムや視覚情報処理にどのように応用されているかに関心を持っています。
+            </p>
+
+            <p data-lang="ja">
+                研究および開発の両面から、コンピュータビジョン、
+                リアルタイム視覚処理、ならびに計算効率を重視したシステム設計について学習・実践してきました。
+            </p>
+
+            <p data-lang="en">
+                I am a senior undergraduate student majoring in Information and Computing Science
+                at Minzu University of China, with a mathematical background in numerical methods,
+                linear algebra, and optimization.
+            </p>
+
+            <p data-lang="en">
+                My academic and practical experiences span computer vision, data-driven visual modeling,
+                and performance-conscious system design, with a focus on real-time and large-scale visual applications.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="research">
+    <h2 data-lang="ja">研究関心・経験</h2>
+    <h2 data-lang="en">Research Interests & Experience</h2>
+
+    <p data-lang="ja">
+        私の研究関心は、視覚情報処理における
+        モデル設計・計算効率・システム制約の相互関係の理解にあります。
+        特に、実時間環境下での性能・精度のトレードオフを意識したアルゴリズム設計に興味を持っています。
+    </p>
+
+    <p data-lang="ja">
+        コンピュータビジョン分野では、都市交通環境における車両検出を対象に、
+        注意機構やデータ拡張手法を組み合わせた検出モデルの改良に取り組みました。
+        また、モデルの解釈性や学習挙動を可視化することで、実運用を意識した評価を行いました。
+    </p>
+
+    <ul data-lang="ja" style="margin-left: 20px; font-size: 15px;">
+  <li>実時間処理を前提としたコンピュータビジョン技術</li>
+  <li>計算資源制約下における学習ベース視覚モデリング</li>
+  <li>システム指向のアルゴリズム設計と性能評価</li>
+</ul>
+
+
+    <p data-lang="en">
+        My research interests focus on the interplay between model design, computational efficiency,
+        and system-level constraints in visual computing.
+        I am particularly interested in algorithmic design under real-time and resource-limited settings.
+    </p>
+
+    <p data-lang="en">
+        In computer vision, I have worked on vehicle detection in complex urban scenarios,
+        exploring attention mechanisms, data augmentation strategies, and interpretability methods
+        to improve both performance and practical reliability.
+    </p>
+
+    
+    <ul data-lang="en" style="margin-left: 20px; font-size: 15px;">
+        <li>Computer Vision for real-world and real-time scenarios</li>
+        <li>Learning-based visual modeling with efficiency considerations</li>
+        <li>System-aware algorithm design and evaluation</li>
+    </ul>
+</section>
+
+<section id="publications">
+    <h2 data-lang="ja">研究業績</h2>
+    <h2 data-lang="en">Publications</h2>
+
+    <div class="item">
+        <span class="item-title">
+            YOLOv8-MAH: A Vehicle Detection Method Based on Mosaic Augmentation, Attention Mechanism, and Heatmap-Based Interpretability
+        </span><br>
+        <span class="item-meta">
+            <u>Yirong Zhou</u>, Yunxiao Chang, Siyu Zhou, Conference on Computer Vision and Image Processing (CVIP), 2025.
+        </span>
+    </div>
+
+   
+</section>
+
+ <section id="languages">
+    <h2 data-lang="ja">言語能力</h2>
+    <h2 data-lang="en">Language Skills</h2>
+
+    <p data-lang="ja" style="font-size: 15px;">
+        中国語（普通話）：母語 ／ 日本語：上級（研究・日常会話） ／ 英語：中上級（論文読解・技術文書）
+    </p>
+
+    <p data-lang="en" style="font-size: 15px;">
+        Chinese (Mandarin): Native / Japanese: Advanced (academic & daily communication) / English: Upper-intermediate (academic reading & technical writing)
+    </p>
+</section>
+
+
+
+</main>
+
+<footer>
+    Last updated: Jan 24, 2026<br>
+    &copy; Yirong Zhou
+</footer>
+
+<script>
+function switchLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = (el.getAttribute('data-lang') === lang) ? 'block' : 'none';
+    });
+    document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+</script>
+
+
 </body>
 </html>
