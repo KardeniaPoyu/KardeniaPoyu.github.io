@@ -68,13 +68,13 @@
         }
 
         .profile-photo {
-    width: 140px;
-    height: auto;
-    border: 1px solid #666;
-    display: block;
-    background-color: #fff;
-    filter: contrast(1.05); 
-}
+            width: 140px;
+            height: auto;
+            border: 1px solid #666;
+            display: block;
+            background-color: #fff;
+            filter: contrast(1.05); 
+        }
 
         /* 移动端适配：照片居中 */
         @media (max-width: 600px) {
@@ -89,14 +89,14 @@
         }
 
         .profile-text p, section p {
-    text-align: justify; 
-    text-justify: inter-character;
-    word-break: break-all;
-}
+            text-align: justify; 
+            text-justify: inter-character;
+            word-break: break-all;
+        }
 
-nav a:visited {
-    color: #551a8b; 
-}
+        nav a:visited {
+            color: #551a8b; 
+        }
 
         .item {
             margin-bottom: 22px;
@@ -110,6 +110,108 @@ nav a:visited {
         .item-meta {
             font-size: 13px;
             color: #555;
+        }
+
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 24px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            background-color: #333;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+            padding-left: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 9px;
+            height: 9px;
+            background-color: #fff;
+            border: 2px solid #333;
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 13px;
+            color: #555;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        /* Research experience styles */
+        .research-item {
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .research-item:last-child {
+            border-bottom: none;
+        }
+
+        .research-header {
+            margin-bottom: 12px;
+        }
+
+        .research-title-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .research-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .research-meta {
+            font-size: 13px;
+            color: #666;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .research-period {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .research-desc {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 8px;
         }
 
         footer {
@@ -171,6 +273,8 @@ nav a:visited {
 <nav>
     <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="https://github.com/KardeniaPoyu" target="_blank">GitHub</a></li>
@@ -195,11 +299,11 @@ nav a:visited {
             </p>
 
             <p data-lang="ja">
-                 これまで主にコンピュータビジョン分野において、
-    実時間処理や計算効率を意識したモデル設計およびシステム実装に取り組んできました。
-    これらの経験を基に、
-    リアルタイムレンダリングやコンピュータグラフィックスにおける
-    計算モデルおよびシステム設計にも強い関心を持っています。
+                これまで主にコンピュータビジョン分野において、
+                実時間処理や計算効率を意識したモデル設計およびシステム実装に取り組んできました。
+                これらの経験を基に、
+                リアルタイムレンダリングやコンピュータグラフィックスにおける
+                計算モデルおよびシステム設計にも強い関心を持っています。
             </p>
 
             <p data-lang="en">
@@ -209,21 +313,243 @@ nav a:visited {
             </p>
 
             <p data-lang="en">
-                 My previous work has primarily focused on computer vision,
-    with an emphasis on real-time processing, computational efficiency,
-    and system-oriented model design.
-    Building on this experience, I am increasingly interested in
-    computer graphics and real-time rendering systems,
-    particularly in the mathematical and system-level foundations
-    of modern graphics pipelines.
+                My previous work has primarily focused on computer vision,
+                with an emphasis on real-time processing, computational efficiency,
+                and system-oriented model design.
+                Building on this experience, I am increasingly interested in
+                computer graphics and real-time rendering systems,
+                particularly in the mathematical and system-level foundations
+                of modern graphics pipelines.
             </p>
         </div>
     </div>
 </section>
 
+<section id="timeline">
+    <h2 data-lang="ja">略歴</h2>
+    <h2 data-lang="en">Timeline</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date" data-lang="ja">2026年6月（予定）</div>
+            <div class="timeline-date" data-lang="en">June 2026 (Expected)</div>
+            <div class="timeline-title" data-lang="ja">学士号取得予定</div>
+            <div class="timeline-title" data-lang="en">B.S. Expected</div>
+            <div class="timeline-desc" data-lang="ja">
+                中央民族大学 理学院 情報と計算科学専攻
+            </div>
+            <div class="timeline-desc" data-lang="en">
+                Information and Computing Science, Minzu University of China
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date" data-lang="ja">2024年9月 – 2025年1月</div>
+            <div class="timeline-date" data-lang="en">Sep 2024 – Jan 2025</div>
+            <div class="timeline-title" data-lang="ja">車両検出研究プロジェクト</div>
+            <div class="timeline-title" data-lang="en">Vehicle Detection Research Project</div>
+            <div class="timeline-desc" data-lang="ja">
+                YOLOv8ベースの車両検出モデル改良研究に従事。注意機構の導入、データ拡張手法の設計、およびヒートマップによる解釈性分析を実施。
+            </div>
+            <div class="timeline-desc" data-lang="en">
+                Worked on improving YOLOv8-based vehicle detection model with attention mechanisms, data augmentation strategies, and heatmap-based interpretability analysis.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date" data-lang="ja">2023年9月 – 2024年6月</div>
+            <div class="timeline-date" data-lang="en">Sep 2023 – Jun 2024</div>
+            <div class="timeline-title" data-lang="ja">大学研究プロジェクト参加</div>
+            <div class="timeline-title" data-lang="en">Undergraduate Research Participation</div>
+            <div class="timeline-desc" data-lang="ja">
+                機械学習およびコンピュータビジョンの基礎研究に従事。深層学習フレームワークの実装経験を積む。
+            </div>
+            <div class="timeline-desc" data-lang="en">
+                Engaged in foundational research on machine learning and computer vision. Gained hands-on experience with deep learning frameworks.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date" data-lang="ja">2022年9月</div>
+            <div class="timeline-date" data-lang="en">Sep 2022</div>
+            <div class="timeline-title" data-lang="ja">中央民族大学入学</div>
+            <div class="timeline-title" data-lang="en">Enrolled at Minzu University of China</div>
+            <div class="timeline-desc" data-lang="ja">
+                理学院 情報と計算科学専攻に入学。数値解析、線形代数、最適化理論などの数学的基盤を学習。
+            </div>
+            <div class="timeline-desc" data-lang="en">
+                Began undergraduate studies in Information and Computing Science, building mathematical foundations in numerical analysis, linear algebra, and optimization.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <h2 data-lang="ja">研究経歴</h2>
+    <h2 data-lang="en">Research Experience</h2>
+
+    <div class="research-item">
+        <div class="research-header">
+            <div class="research-title-line">
+                <div class="research-title" data-lang="ja">
+                    都市交通環境における車両検出の高精度化研究
+                </div>
+                <div class="research-meta" data-lang="ja">
+                    学部生による自主研究 / 中央民族大学
+                </div>
+            </div>
+            <div class="research-title-line">
+                <div class="research-title" data-lang="en">
+                    High-Precision Vehicle Detection in Urban Traffic Environments
+                </div>
+                <div class="research-meta" data-lang="en">
+                    Independent Research Project / Minzu University of China
+                </div>
+            </div>
+            <div class="research-period">2024年9月 – 2025年1月 / Sep 2024 – Jan 2025</div>
+        </div>
+        <div class="research-desc" data-lang="ja">
+            YOLOv8をベースとした車両検出モデルの改良研究に従事。複雑な都市環境における検出精度向上を目的として、以下の手法を実装・評価しました。
+        </div>
+        <div class="research-desc" data-lang="en">
+            Conducted research on improving YOLOv8-based vehicle detection models for complex urban scenarios. Implemented and evaluated the following approaches to enhance detection accuracy:
+        </div>
+        <ul style="margin-left: 20px; font-size: 14px; line-height: 1.8;">
+            <li data-lang="ja">注意機構（Attention Mechanism）の統合によるモデル性能向上</li>
+            <li data-lang="ja">データ拡張手法（Mosaic Augmentation）を用いた学習データの多様性確保</li>
+            <li data-lang="ja">ヒートマップベースの解釈性分析による検出挙動の可視化</li>
+            <li data-lang="ja">実時間処理を考慮した計算効率と精度のトレードオフ評価</li>
+            
+            <li data-lang="en">Integration of attention mechanisms to improve model performance</li>
+            <li data-lang="en">Mosaic augmentation strategy to enhance training data diversity</li>
+            <li data-lang="en">Heatmap-based interpretability analysis for visualization of detection behavior</li>
+            <li data-lang="en">Trade-off analysis between computational efficiency and accuracy for real-time processing</li>
+        </ul>
+        <div class="research-desc" data-lang="ja">
+            本研究成果は、Conference on Computer Vision and Image Processing (CVIP) 2025にて発表予定です。
+        </div>
+        <div class="research-desc" data-lang="en">
+            This work will be presented at the Conference on Computer Vision and Image Processing (CVIP) 2025.
+        </div>
+    </div>
+
+    <div class="research-item">
+        <div class="research-header">
+            <div class="research-title-line">
+                <div class="research-title" data-lang="ja">
+                    機械学習基盤技術の習得および応用研究
+                </div>
+                <div class="research-meta" data-lang="ja">
+                    学部研究 / 中央民族大学
+                </div>
+            </div>
+            <div class="research-title-line">
+                <div class="research-title" data-lang="en">
+                    Foundational Machine Learning and Applied Research
+                </div>
+                <div class="research-meta" data-lang="en">
+                    Undergraduate Research / Minzu University of China
+                </div>
+            </div>
+            <div class="research-period">2023年9月 – 2024年6月 / Sep 2023 – Jun 2024</div>
+        </div>
+        <div class="research-desc" data-lang="ja">
+            コンピュータビジョンおよび深層学習の基礎技術習得を目的とした研究活動に従事。PyTorchを用いたモデル実装、データ前処理パイプラインの構築、および学習プロセスの最適化手法について実践的な経験を積みました。
+        </div>
+        <div class="research-desc" data-lang="en">
+            Engaged in foundational research activities focused on computer vision and deep learning. Gained practical experience in model implementation using PyTorch, data preprocessing pipeline construction, and optimization techniques for training processes.
+        </div>
+        <ul style="margin-left: 20px; font-size: 14px; line-height: 1.8;">
+            <li data-lang="ja">画像分類・物体検出タスクにおける深層学習モデルの実装</li>
+            <li data-lang="ja">データセット構築および前処理手法の設計</li>
+            <li data-lang="ja">ハイパーパラメータ調整による学習効率の改善</li>
+            
+            <li data-lang="en">Implementation of deep learning models for image classification and object detection tasks</li>
+            <li data-lang="en">Dataset construction and preprocessing method design</li>
+            <li data-lang="en">Training efficiency improvement through hyperparameter tuning</li>
+        </ul>
+    </div>
+
+    <div class="research-item">
+    <div class="research-header">
+        <div class="research-title-line">
+            <div class="research-title" data-lang="ja">
+                機械学習による民族村寨の生態持続性評価モデルの構築
+            </div>
+            <div class="research-meta" data-lang="ja">
+                URTP / 中央民族大学
+            </div>
+        </div>
+        <div class="research-title-line">
+            <div class="research-title" data-lang="en">
+                Machine Learning for Eco-Sustainability Modeling in Ethnic Villages
+            </div>
+            <div class="research-meta" data-lang="en">
+                URTP / Minzu University of China
+            </div>
+        </div>
+        <div class="research-period">
+    2024年6月 – 2025年5月 / Jun 2024 – May 2025
+</div>
+
+    </div>
+
+    <div class="research-desc" data-lang="ja">
+        大学研究训练计划（URTP）の一環として、広西地域の民族村寨を対象に、
+        生態系サービスと地域経済指標の関係を定量的に評価する
+        機械学習ベースの分析フレームワークを構築しました。
+    </div>
+
+    <div class="research-desc" data-lang="en">
+        As a core member of the University Research Training Program (URTP),
+        I developed a machine learning–based framework to quantitatively evaluate
+        ecological sustainability and development patterns in ethnic villages in Guangxi, China.
+    </div>
+
+    <ul style="margin-left: 20px; font-size: 14px; line-height: 1.8;">
+        <li data-lang="ja">
+            InVESTモデルを用いた生態系サービス（炭素貯蔵量・水源涵養）の定量評価
+        </li>
+        <li data-lang="ja">
+            NDVI・降水量・土壌データなどの多源リモートセンシングデータの前処理と統合
+        </li>
+        <li data-lang="ja">
+            Random Forest および CNN-LSTM による時空間パターンのモデリング
+        </li>
+        <li data-lang="ja">
+            カルスト地形における生態・経済結合関係の予測精度評価
+        </li>
+
+        <li data-lang="en">
+            Quantification of ecosystem services (carbon storage, water yield) using InVEST models
+        </li>
+        <li data-lang="en">
+            Processing and integration of multi-source geospatial data (NDVI, precipitation, soil)
+        </li>
+        <li data-lang="en">
+            Spatiotemporal modeling using Random Forest and CNN-LSTM architectures
+        </li>
+        <li data-lang="en">
+            Predictive analysis of ecology–economy coupling in karst-sensitive regions
+        </li>
+    </ul>
+
+    <div class="research-desc" data-lang="ja">
+        本研究を通じて、機械学習を用いた複雑システムのモデリング手法と、
+        実データに基づく評価プロセスについて実践的な経験を積みました。
+    </div>
+
+    <div class="research-desc" data-lang="en">
+        This project strengthened my experience in machine learning–based modeling
+        of complex real-world systems and data-driven evaluation under practical constraints.
+    </div>
+</div>
+
+</section>
+
 <section id="research">
-    <h2 data-lang="ja">研究関心・経験</h2>
-    <h2 data-lang="en">Research Interests & Experience</h2>
+    <h2 data-lang="ja">研究関心・方向性</h2>
+    <h2 data-lang="en">Research Interests</h2>
 
     <p data-lang="ja">
         私の研究関心は、視覚情報処理における
@@ -237,19 +563,18 @@ nav a:visited {
         また、モデルの解釈性や学習挙動を可視化することで、実運用を意識した評価を行いました。
     </p>
 
-<p data-lang="ja">
-    このような取り組みを通じて、
-現在は実時間処理を前提とした視覚情報処理を共通の軸として、
-以下の観点に着目しています。
-</p>
+    <p data-lang="ja">
+        このような取り組みを通じて、
+        現在は実時間処理を前提とした視覚情報処理を共通の軸として、
+        以下の観点に着目しています。
+    </p>
 
     <ul data-lang="ja" style="margin-left: 20px; font-size: 15px;">
-  <li>実時間処理を前提としたコンピュータビジョン技術</li>
-  <li>計算資源制約下における学習ベース視覚モデリング</li>
-  <li>システム指向のアルゴリズム設計と性能評価</li>
-    <li>リアルタイムレンダリングおよびコンピュータグラフィックスシステムへの関心</li>
-</ul>
-
+        <li>実時間処理を前提としたコンピュータビジョン技術</li>
+        <li>計算資源制約下における学習ベース視覚モデリング</li>
+        <li>システム指向のアルゴリズム設計と性能評価</li>
+        <li>リアルタイムレンダリングおよびコンピュータグラフィックスシステムへの関心</li>
+    </ul>
 
     <p data-lang="en">
         My research interests focus on the interplay between model design, computational efficiency,
@@ -264,9 +589,10 @@ nav a:visited {
     </p>
 
     <p data-lang="en">
-    Through these experiences, I have developed a unified perspective on real-time
-visual computing, and I currently focus on the following aspects:
-</p>
+        Through these experiences, I have developed a unified perspective on real-time
+        visual computing, and I currently focus on the following aspects:
+    </p>
+    
     <ul data-lang="en" style="margin-left: 20px; font-size: 15px;">
         <li>Computer Vision for real-world and real-time scenarios</li>
         <li>Learning-based visual modeling with efficiency considerations</li>
@@ -287,29 +613,25 @@ visual computing, and I currently focus on the following aspects:
             <u>Yirong Zhou</u>, Yunxiao Chang, Siyu Zhou, Conference on Computer Vision and Image Processing (CVIP), 2025.
         </span>
     </div>
-
-   
 </section>
 
- <section id="languages">
+<section id="languages">
     <h2 data-lang="ja">言語能力</h2>
     <h2 data-lang="en">Language Skills</h2>
 
     <p data-lang="ja" style="font-size: 15px;">
-        中国語（普通話）：ネイティブ ／ 日本語：流暢 (JLPT N2) ／ 英語：流暢（TOEIC 895点）
+        中国語（普通話）:ネイティブ ／ 日本語:流暢 (JLPT N2) ／ 英語:流暢（TOEIC 895点）
     </p>
 
     <p data-lang="en" style="font-size: 15px;">
-        Chinese (Mandarin): Native / Japanese: Fluent (JLPT N2)  / English: Fluent (TOEIC 895)
+        Chinese (Mandarin): Native / Japanese: Fluent (JLPT N2) / English: Fluent (TOEIC 895)
     </p>
 </section>
-
-
 
 </main>
 
 <footer>
-    Last updated: Jan 24, 2026<br>
+    Last updated: Jan 28, 2026<br>
     &copy; Yirong Zhou
 </footer>
 
@@ -322,7 +644,6 @@ function switchLang(lang) {
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 }
 </script>
-
 
 </body>
 </html>
