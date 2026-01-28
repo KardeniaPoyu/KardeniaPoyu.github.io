@@ -112,59 +112,6 @@
             color: #555;
         }
 
-        /* Timeline styles */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            margin-top: 24px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 8px;
-            bottom: 8px;
-            width: 1px;
-            background-color: #333;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 28px;
-            padding-left: 0;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -26px;
-            top: 6px;
-            width: 9px;
-            height: 9px;
-            background-color: #fff;
-            border: 2px solid #333;
-            border-radius: 50%;
-        }
-
-        .timeline-date {
-            font-size: 13px;
-            color: #555;
-            font-weight: bold;
-            margin-bottom: 4px;
-        }
-
-        .timeline-title {
-            font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 6px;
-        }
-
-        .timeline-desc {
-            font-size: 14px;
-            line-height: 1.7;
-            color: #333;
-        }
 
         /* Research experience styles */
         .research-item {
@@ -273,7 +220,6 @@
 <nav>
     <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#timeline">Timeline</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
@@ -325,65 +271,6 @@
     </div>
 </section>
 
-<section id="timeline">
-    <h2 data-lang="ja">略歴</h2>
-    <h2 data-lang="en">Timeline</h2>
-
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-date" data-lang="ja">2026年6月（予定）</div>
-            <div class="timeline-date" data-lang="en">June 2026 (Expected)</div>
-            <div class="timeline-title" data-lang="ja">学士号取得予定</div>
-            <div class="timeline-title" data-lang="en">B.S. Expected</div>
-            <div class="timeline-desc" data-lang="ja">
-                中央民族大学 理学院 情報と計算科学専攻
-            </div>
-            <div class="timeline-desc" data-lang="en">
-                Information and Computing Science, Minzu University of China
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-date" data-lang="ja">2024年9月 – 2025年1月</div>
-            <div class="timeline-date" data-lang="en">Sep 2024 – Jan 2025</div>
-            <div class="timeline-title" data-lang="ja">車両検出研究プロジェクト</div>
-            <div class="timeline-title" data-lang="en">Vehicle Detection Research Project</div>
-            <div class="timeline-desc" data-lang="ja">
-                YOLOv8ベースの車両検出モデル改良研究に従事。注意機構の導入、データ拡張手法の設計、およびヒートマップによる解釈性分析を実施。
-            </div>
-            <div class="timeline-desc" data-lang="en">
-                Worked on improving YOLOv8-based vehicle detection model with attention mechanisms, data augmentation strategies, and heatmap-based interpretability analysis.
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-date" data-lang="ja">2023年9月 – 2024年6月</div>
-            <div class="timeline-date" data-lang="en">Sep 2023 – Jun 2024</div>
-            <div class="timeline-title" data-lang="ja">大学研究プロジェクト参加</div>
-            <div class="timeline-title" data-lang="en">Undergraduate Research Participation</div>
-            <div class="timeline-desc" data-lang="ja">
-                機械学習およびコンピュータビジョンの基礎研究に従事。深層学習フレームワークの実装経験を積む。
-            </div>
-            <div class="timeline-desc" data-lang="en">
-                Engaged in foundational research on machine learning and computer vision. Gained hands-on experience with deep learning frameworks.
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-date" data-lang="ja">2022年9月</div>
-            <div class="timeline-date" data-lang="en">Sep 2022</div>
-            <div class="timeline-title" data-lang="ja">中央民族大学入学</div>
-            <div class="timeline-title" data-lang="en">Enrolled at Minzu University of China</div>
-            <div class="timeline-desc" data-lang="ja">
-                理学院 情報と計算科学専攻に入学。数値解析、線形代数、最適化理論などの数学的基盤を学習。
-            </div>
-            <div class="timeline-desc" data-lang="en">
-                Began undergraduate studies in Information and Computing Science, building mathematical foundations in numerical analysis, linear algebra, and optimization.
-            </div>
-        </div>
-    </div>
-</section>
-
 <section id="experience">
     <h2 data-lang="ja">研究経歴</h2>
     <h2 data-lang="en">Research Experience</h2>
@@ -395,7 +282,7 @@
                     都市交通環境における車両検出の高精度化研究
                 </div>
                 <div class="research-meta" data-lang="ja">
-                    学部生による自主研究 / 中央民族大学
+                    自主研究 / 中央民族大学
                 </div>
             </div>
             <div class="research-title-line">
